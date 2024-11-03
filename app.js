@@ -2,7 +2,6 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-var host = process.env.HOST || 'gdgcertificatev2.onrender.com';
 var port = process.env.PORT || 8080;
 
 app.use(express.static('dist'));
@@ -36,8 +35,8 @@ cors_proxy
 			xfwd: false,
 		},
 	})
-	.listen(port, host, function () {
-		console.log('Running CORS Anywhere on ' + host + ':' + port);
+	.listen(port, function () {
+		console.log('Running CORS Anywhere on ' + ':' + port);
 	});
 
 app.listen(3000, () => {
