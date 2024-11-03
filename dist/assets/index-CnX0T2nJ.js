@@ -16248,7 +16248,7 @@ function Lx() {
 			console.log('fetched data'),
 				localStorage.setItem('data', JSON.stringify(i));
 			// var o = JSON.stringify(i);
-			window.location.href = '/certificate/view' + o;
+			window.location.href = '/certificate/view';
 		};
 	return k.jsx(k.Fragment, {
 		children: k.jsxs(Ia, {
