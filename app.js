@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-var host = process.env.HOST || '0.0.0.0';
+var host = process.env.HOST || 'gdgcertificatev2.onrender.com';
 var port = process.env.PORT || 8080;
 
 app.use(express.static('dist'));
