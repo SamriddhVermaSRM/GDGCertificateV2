@@ -16202,7 +16202,7 @@ function Lx() {
 	const r = async (o) => {
 			console.log('fetching data started');
 			try {
-				const s = await fetch('https://' + n + '/' + o, { method: 'GET', cors: 'same-origin' });
+				const s = await fetch('http://' + n + ':8080/' + o, { method: 'GET', cors: 'same-origin' });
 				if (!s.ok)
 					throw new Error('You might have entered an invalid or wrong URL');
 				const l = await s.text(),
