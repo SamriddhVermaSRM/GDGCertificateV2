@@ -2,11 +2,14 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-app.use(express.static('site'));
+var host = process.env.HOST || '0.0.0.0';
+var port = process.env.PORT || 8080;
+
+app.use(express.static('dist'));
 
 // Handle any requests that don't match the ones above
 app.get('*', (req, res) => {
-	res.sendFile(path.join(__dirname, 'site', 'index.html'));
+	res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 var cors_proxy = require('./cors-anywhere');
@@ -33,8 +36,8 @@ cors_proxy
 			xfwd: false,
 		},
 	})
-	.listen(8080, function () {
-		console.log('Running CORS Anywhere on ' + ':' + 8080);
+	.listen(port, host, function () {
+		console.log('Running CORS Anywhere on ' + host + ':' + port);
 	});
 
 app.listen(3000, () => {
